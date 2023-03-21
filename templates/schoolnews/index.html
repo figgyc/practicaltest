@@ -6,7 +6,10 @@
              background: yellow;
              font-family: serif;
          }
-
+         img {
+             float: right;
+             width: 200px;
+         }
         </style>
     </head>
     <body>
@@ -15,6 +18,9 @@
             <div>
                 <h2>{{ article.title }}</h2>
                 <em>by {{article.author}}. {{article.date}}</em>
+                {% if article.picture %}
+                    <img src="{{ MEDIA_URL }}{{ article.picture }}">
+                {% endif %}
                 <p>{{ article.text }}</p>
             </div>
         {% endfor %}
