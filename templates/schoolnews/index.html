@@ -2,24 +2,45 @@
 <body>
     <head>
         <style>
-         body {
+         center {
              background: yellow;
-             font-family: serif;
+             color: #090909;
+         }
+         body {
+             background: white;
+             color: black;
+             font-family: sans-serif;
+             margin: 0;
          }
          img {
              float: right;
              width: 200px;
+             border-radius: 4px;
+         }
+         h1 {
+             font-family: serif;
+             text-decoration: underline;
+             font-variant: small-caps;
+         }
+         h2 {
+             font-family: serif;
+             border-bottom: 4px solid yellow;
+         }
+         div {
+             max-width: 900px;
+             margin: auto;
+             padding: 8px;
          }
         </style>
     </head>
     <body>
-        <h1><center>School News</center></h1>
+        <center><h1>School News</h1></center>
         {% for article in articles %}
             <div>
                 <h2>{{ article.title }}</h2>
                 <em>by {{article.author}}. {{article.date}}</em>
                 {% if article.picture %}
-                    <img src="{{ MEDIA_URL }}{{ article.picture }}">
+                    <img src="{{ MEDIA_URL }}{{ article.picture }}" />
                 {% endif %}
                 <p>{{ article.text }}</p>
             </div>
