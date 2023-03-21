@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<body>
+    <head>
+        <style>
+         body {
+             background: yellow;
+             font-family: serif;
+         }
+
+        </style>
+    </head>
+    <body>
+        <h1><center>School News</center></h1>
+        {% for article in articles %}
+            <div>
+                <h2>{{ article.title }}</h2>
+                <em>by {{article.author}}. {{article.date}}</em>
+                <p>{{ article.text }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</body>
